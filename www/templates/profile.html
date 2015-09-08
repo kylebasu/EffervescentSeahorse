@@ -2,6 +2,9 @@
   <ion-nav-back-button id="back__button"
     ng-click="myGoBack()"> &nbsp; Filter
   </ion-nav-back-button>
+  <ion-nav-buttons side='right'>
+    <button ng-click='editProf()'> &nbsp; Edit </button>
+  </ion-nav-buttons>
   <h4>Profile</h4>
 </ion-nav-bar>
 
@@ -10,6 +13,9 @@
     <div class='profile__box'>
       <div class="circular">
         <img ng-src="data:image/png;base64,{{ profpic }}" class='profpic'>
+      </div>
+      <div class="circular" ng-show='edit'>
+        <span class='profpic'>hihihihihihihi</span>
       </div>
       <h2 class='sections' id='displayName' style='border-bottom: none;'>{{user.displayName}}</h2>
       <div class='bio__info'>
@@ -29,14 +35,15 @@
             <ul class='icon'>
                 <li class='fill__text2 flaticon-runer' ng-repeat='interest in interests'>{{interest.activity}}</li>
             </ul>
+            <div class="circular" ng-show='edit'>
+      </div>
           </div>
         </ion-content>
       </div>
       <div class='profile__box' style='background-color: white;' ng-show='isActive("Photos")'>
         <div ng-show='isActive("Photos")'>
           <h2 class='sections'>Photos</h2>
-          <ul rn-carousel class="item item-image padding profpic">
-              <li ng-repeat='image in picGallery'><img ng-src="data:image/png;base64,{{ image.picture }}" class='layer'></li>
+          <ul rn-carousel class="item item-image padding profpic" id='photoCar'><li ng-repeat='image in picGallery'><img ng-src="data:image/png;base64,{{ image.picture }}" class='layer'></li>
           </ul>
         </div>
       </div>
