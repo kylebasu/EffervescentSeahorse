@@ -34,7 +34,7 @@
           <div ng-show='isActive("Interests")'>
             <h2 class='sections'>Interests</h2>
             <ul class='icon'>
-                <li class='fill__text2 flaticon-runer' ng-repeat='interest in interests' ng-model='activity'>{{interest.activity}}<div class='ion-close-circled exInterest' ng-show='isEdit("on")' ng-click='removeInterest({{interst.activity}})'></div></li>
+                <li class='fill__text2 ion-ios-americanfootball' ng-repeat='interest in interests' ng-model='activity'>{{interest.activity}}<div class='ion-close-circled exInterest' ng-show='isEdit("on")' ng-click='removeInterest({{interst.activity}})'></div></li>
             </ul>
             <select class='nav__bar' ng-show='isEdit("on")' ng-model = 'activityOptions' ng-change='addInterest(activityOptions)'>
               <option ng-repeat='activity in activities' value='{{activity}}'>{{ activity }}</option>
@@ -63,22 +63,22 @@
       </div>
       <div class='profile__box whitey' ng-show='isActive("Stats")'>
         <h2 class='sections'>Stats</h2>
-        <div>I benchpress {{ stats.bench}} pounds</div>
+        <div class='fill__text2'>Bench Press: {{ stats.bench}} pounds</div>
         <form ng-show='isEdit("on")'>
           <input ng-model='benchs'></input>
           <button ng-click='postStats("bench", benchs)'>Submit</button>
         </form>
-        <div>I squat {{ stats.squat }} pounds </div>
+        <div class='fill__text2'>Back Squat: {{ stats.squat }} pounds </div>
         <form ng-show='isEdit("on")'>
           <input ng-model='squats'></input>
           <button ng-click='postStats("squat", squats)'>Submit</button>
         </form>
-        <div>I military press {{ stats.press }} pounds </div>
+        <div class='fill__text2'>Military Press: {{ stats.press }} pounds </div>
         <form ng-show='isEdit("on")'>
           <input ng-model='presses'></input>
           <button ng-click='postStats("press", presses)'>Submit</button>
         </form>
-        <div>I deadlift {{ stats.dead }} pounds </div>
+        <div class='fill__text2'> Deadlift: {{ stats.dead }} pounds </div>
         <form ng-show='isEdit("on")'>
           <input ng-model='deads'></input>
           <button ng-click='postStats("dead", deads)'>Submit</button>
