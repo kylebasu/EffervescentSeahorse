@@ -611,7 +611,6 @@ h2.sections{
 
 .fill__text1{
   font-size: 15px;
-  border-bottom: 1px solid lightgrey;
   padding: 10px;
   text-align: center;
   font-family: 'Bariol', 'Lato', sans-serif;
@@ -768,7 +767,7 @@ ul.icon
 
 ul.icon li
 {
-  text-indent: -2.0em;
+  text-indent: -1.0em;
 }
 
 #photoCar img {
@@ -915,7 +914,7 @@ ul.icon li
 }
 
 #override__pad{
-  padding-right: 16px;
+  padding-right: -30px;
 }
 /*ul.icon li:before
 {

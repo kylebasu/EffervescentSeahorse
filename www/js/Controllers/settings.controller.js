@@ -3,13 +3,14 @@
 	angular.module('starter.controllers')
 	  .controller('SettingsController', SettingsController);
 
-	SettingsController.$inject = ['$scope', '$ionicHistory', '$state'];
+	SettingsController.$inject = ['$scope', '$ionicHistory', '$state', '$location'];
 
-	function SettingsController ($scope, $ionicHistory, $state) {
+	function SettingsController ($scope, $ionicHistory, $state, $location) {
 		var vm = this;
 		vm.logout = logout;
 		vm.userID = window.localStorage.uid;
-		console.log('initialized settings controller');
+		vm.profile = goProfile;
+
 
 		function logout () {
 			delete window.localStorage['uid'];
@@ -19,5 +20,9 @@
 			});
 			$state.go('login');
 		}
+
+		function goProfile() {
+			$location.path('/profile/' + vm.userID)
+		};
 	}
 })();

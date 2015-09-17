@@ -60,6 +60,8 @@ angular.module('starter.controllers', [])
           }
         }
         $scope.activities = activitiesArr;
+      }else{
+        $scope.activities = activities
       }
     });
   });
