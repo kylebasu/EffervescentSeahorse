@@ -19,8 +19,14 @@
       vm.messages = [];
       $timeout(function() {
         for(var key in snapshot.val()) {
-          vm.messages.push(snapshot.val()[key]);
+          if(key !== 'unreadMessage'){
+            vm.messages.push(snapshot.val()[key]);
+          }
         }
+        //Set Messages to read HERE HERE HERE =================================
+        ref.child('rooms').child(window.localStorage['uid']).child($stateParams.userId).update({
+          unreadMessage: false
+        });
       });
       $ionicScrollDelegate.scrollBottom();
     });
@@ -43,6 +49,10 @@
         ref.child('rooms').child($stateParams.userId).child(window.localStorage['uid']).push({
           sender: window.localStorage['uid'],
           text: message
+        });
+        // Set Unread messages to stateParams userID room HERE HERE HERE=================================
+        ref.child('rooms').child($stateParams.userId).child(window.localStorage['uid']).update({
+          unreadMessage: true
         });
       }
       vm.text = '';
