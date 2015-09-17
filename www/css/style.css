@@ -927,7 +927,26 @@ ul.icon li
 
 ul.icon li.runner:before { content: "\e000";}*/
 
+.redDot{
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  color: red;
+}
 
+.redDot2{
+/*  border-radius: 100%;*/
+  width: 10px;
+  height: 10px;
+/*  background-color: red;*/
+  position: absolute;
+  left: 33%;
+  color: red;
+}
+
+.newMsg{
+  background-color: red;
+}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * EVENTS TAB

@@ -12,8 +12,10 @@
       <ion-item class="item-avatar item-icon-right search--item" ng-repeat="user in vm.users | filter:query" type="item-text-wrap" href="#/profile/{{user.uid}}" >
         <img ng-src="data:image/png;base64,{{user.profilepicture}}" style="width: 64px; height: 64px">
         <h2 id="search--username">{{user.displayName}}</h2>
+<!--         <span ng-show='{{user.newMsg}}' class='search--activity'> New Message!</span> -->
         <span class="search--activity" ng-repeat='interest in user.interests'>{{interest.activity}} &nbsp;</span>
         <button class='friendChat' ng-hide="blocked" id='bubblify--2'>
+          <div class='redDot ion-alert' ng-show='{{user.newMsg}}'></div>
           <a href="#/messages/{{user.uid}}" class='ion-chatbubble-working' id='bubblify--2'></a>
         </button>
       </ion-item>

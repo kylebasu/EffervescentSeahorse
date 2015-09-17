@@ -20,6 +20,12 @@
         chatService.getChats(snapshot.val()).then(function(chats) {
           $timeout(function() {
             vm.users = chats;
+            for(var i = 0; i < vm.users.length; i++){
+              ref.child('rooms').child(uid).child(vm.users[i].uid).child('unreadMessage').on('value', function (snapshot) {
+                vm.users[i].newMsg = snapshot.val();
+              });
+            }
+            console.log(vm.users)
           });
         });
       });
